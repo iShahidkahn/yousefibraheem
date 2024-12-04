@@ -1,15 +1,46 @@
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("./dist/fonts/Gilroy-Regular.woff");
+  /* font-weight: 400; */
+}
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("./dist/fonts/Gilroy-Bold.woff");
+  /* font-weight: 400; */
+}
+
+.gilory-regular{
+  font-family: "Gilroy-Regular", sans-serif;
+}
+.gilory-bold{
+  font-family: "Gilroy-Bold", sans-serif !important;
+}
 .attention-button {
-  background: linear-gradient(270deg, #7D17FF 0%, #FF17A3 100%);
+  background: linear-gradient(270deg, #7d17ff 0%, #ff17a3 100%);
   color: white; /* Text color */
-height: 30px;
-width: 103px;
+  height: 30px;
+  width: 103px;
   font-size: 14px; /* Font size */
-  font-weight: 600; /* Font weight */
   text-transform: uppercase; /* Uppercase text */
   border-radius: 4px; /* Full-rounded corners */
-
+  font-family: "Gilroy-Bold", sans-serif;
   border: none; /* Remove default border */
   cursor: pointer; /* Change cursor to pointer */
   outline: none; /* Remove outline */
+  position: relative; /* Required for the pseudo-element */
 }
+
+.attention-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px; /* Match button's border-radius */
+  background: linear-gradient(270deg, #7d17ff 0%, #ff17a3 100%);
+  filter: blur(20px); /* Creates the glowing shadow effect */
+  z-index: -1; /* Places it behind the button */
+}
+
 
